@@ -1,33 +1,5 @@
-.main {
-  min-height: 100vh;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-}
-
-.title,
-.description {
-  text-align: center;
-  font-family: "Satisfy", cursive;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-  color: white;
-  margin: 0 0.5rem;
-}
-
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
-  color: white;
+.app {
+  width: 100vw;
 }
 
 .footer {
@@ -37,11 +9,7 @@
   border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+  background-color: #fbf8f1;
+  font-family: "Lato", sans-serif;
+  color: #470d21;
 }

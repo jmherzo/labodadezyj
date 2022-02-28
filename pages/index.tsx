@@ -1,8 +1,9 @@
 import type { NextPage } from "next";
-import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import jumbotronLouvre from "../public/jumbotronLouvre.jpg";
 import Head from "next/head";
+import { Location } from "../components/location/Location";
+import { Jumbotron } from "../components/jumbotron/Jumbotron";
+import { Emoji } from "../components/custom/Emoji";
 
 const Home: NextPage = () => {
   return (
@@ -10,20 +11,12 @@ const Home: NextPage = () => {
       <Head>
         <title>La boda de Zyanya y Jesus</title>
       </Head>
-      <div>
-        <Image
-          src={jumbotronLouvre}
-          alt="Portada con Jesus y Zyanya"
-          layout="fill"
-          objectFit="cover"
-          placeholder="blur"
-          priority
-        />
-        <main className={styles.main}>
-          <h1 className={styles.title}>Zyanya & Jesús</h1>
-          <h3 className={styles.description}>05 - Nov - 2022</h3>
-        </main>
-        <footer className={styles.footer}> Hecho con ❤️ por J&Z</footer>
+      <div className={styles.app}>
+        <Jumbotron />
+        <Location />
+        <footer className={styles.footer}>
+          {"Hecho con"} <Emoji symbol="❤️" label="heart" /> {"por J&Z"}
+        </footer>
       </div>
     </>
   );
