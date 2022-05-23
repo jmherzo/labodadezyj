@@ -14,8 +14,14 @@ export function Jumbotron() {
         priority
       />
       <div className={styles.content}>
-        <h1 className={styles.title}>Zyanya & Jesús</h1>
-        <h3 className={styles.description}>05 - Nov - 2022</h3>
+        <div className={styles.topContent}>
+          <h2 className={styles.description}>La boda de</h2>
+          <h1 className={styles.title}>Zyanya & Jesús</h1>
+        </div>
+        <div className={styles.bottomContent}>
+          <h3 className={styles.description}> Aparta la fecha </h3>
+          <h3 className={styles.weddingDate}>05 - Nov - 2022</h3>
+        </div>
       </div>
     </main>
   );

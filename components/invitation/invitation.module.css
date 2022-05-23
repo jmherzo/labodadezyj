@@ -1,0 +1,68 @@
+.container {
+  background-color: #f5f6f3;
+  font-family: "Lato", sans-serif;
+  color: #064420;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 1rem 0;
+}
+
+.title {
+  font-weight: 800;
+  padding: 1rem;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  min-height: 30rem;
+  background-image: url("/bg-flowers.png");
+  background-size: contain;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.card {
+  border-width: 2px;
+  border-radius: 12px;
+  border-color: #e4bc62;
+  /* background-color: #fffff8; */
+  background-color: #f5f6f3;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.cardTitle {
+  font-weight: 800;
+  display: flex;
+}
+
+.cardSubtitle {
+  font-weight: 800;
+  padding-top: 0.5rem;
+}
+
+.description {
+  font-family: "Lato", sans-serif;
+}
+
+.button {
+  background-color: #e4bc62 !important;
+  margin: 1rem 0;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .cardTitle {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .description {
+    padding: 1rem 0.5rem;
+  }
+}

@@ -1,0 +1,30 @@
+.container {
+  padding: 2rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #217071; */
+  background-color: #23292e;
+  color: white;
+  flex-direction: column;
+}
+
+.digitContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  color: #fffff8;
+  font-family: "Lato", sans-serif;
+}
+
+.divider {
+  font-family: "Lato", sans-serif;
+  justify-content: center;
+}
+
+.title {
+  font-weight: 800;
+  font-family: "Lato", sans-serif;
+}

@@ -1,22 +1,24 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import Head from "next/head";
-import { Location } from "../components/location/Location";
-import { Jumbotron } from "../components/jumbotron/Jumbotron";
-import { Emoji } from "../components/custom/Emoji";
+import { Invitation } from "../components/invitation";
+import { Jumbotron } from "../components/jumbotron";
+import { Timer } from "../components/timer";
+import { Footer } from "../components/footer";
+import { Gifts } from "../components/gifts";
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>La boda de Zyanya y Jesus</title>
+        <title>Zyanya & Jesus - Nuestra Boda</title>
       </Head>
       <div className={styles.app}>
         <Jumbotron />
-        <Location />
-        <footer className={styles.footer}>
-          {"Hecho con"} <Emoji symbol="❤️" label="heart" /> {"por J&Z"}
-        </footer>
+        <Invitation />
+        <Timer />
+        <Gifts />
+        <Footer />
       </div>
     </>
   );

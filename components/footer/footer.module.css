@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 1rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbf8f1;
+  font-family: "Lato", sans-serif;
+  color: #470d21;
+}

@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 30rem;
+  font-family: "Lato", sans-serif;
+  background-color: #f5f6f3;
+  padding: 2rem;
+}
+
+.coming {
+  font-weight: 800;
+  color: #e4bc62;
+}
+
+.title {
+  font-weight: 800;
+}
+
+.card {
+  border-width: 2px;
+  border-radius: 12px;
+  border-color: #e4bc62;
+  /* background-color: #fffff8; */
+  background-color: white;
+  margin: 1rem 0;
+  padding: 1rem;
+}
