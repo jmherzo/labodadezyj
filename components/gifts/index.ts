@@ -1,3 +1,1 @@
-import { Gifts } from "./Gifts";
-
-export { Gifts };
+export { Gifts } from "./Gifts";

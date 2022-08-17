@@ -1,7 +1,7 @@
-import { Emoji } from "../Custom/Emoji";
+import { Emoji } from "../emoji";
 import styles from "./footer.module.scss";
 
-function Footer() {
+export function Footer() {
   return (
     <footer className={styles.footer}>
       {"© 2022 | labodadezyj.com"}
@@ -9,5 +9,3 @@ function Footer() {
     </footer>
   );
 }
-
-export { Footer };
