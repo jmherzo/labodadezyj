@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Invitation } from "../components/Invitation";
-import { Jumbotron } from "../components/Jumbotron";
-import { Timer } from "../components/Timer";
+import { Invitation } from "../components/invitation";
+import { Jumbotron } from "../components/jumbotron";
+import { Timer } from "../components/timer";
 import { Footer } from "../components/footer";
-import { UnderConstruction } from "../components/UnderConstruction";
+import { UnderConstruction } from "../components/underConstruction";
 
 const Home: NextPage = () => {
   return (

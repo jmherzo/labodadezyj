@@ -2,7 +2,7 @@ import { Box, Button, ButtonGroup, Link, Text } from "@chakra-ui/react";
 import styles from "./invitation.module.scss";
 import { atcb_action, atcb_init } from "add-to-calendar-button";
 import { useEffect } from "react";
-import { Emoji } from "../Emoji";
+import { Emoji } from "../emoji";
 
 export function Invitation() {
   useEffect(() => {
