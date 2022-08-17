@@ -1,4 +1,4 @@
-import { Emoji } from "../Custom";
+import { Emoji } from "../Custom/Emoji";
 import styles from "./footer.module.scss";
 
 function Footer() {
