@@ -1,3 +1,1 @@
-import { UnderConstruction } from "./UnderConstruction";
-
-export { UnderConstruction };
+export { UnderConstruction } from "./UnderConstruction";
