@@ -1,11 +1,11 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import Head from "next/head";
-import { Invitation } from "../components/invitation";
-import { Jumbotron } from "../components/jumbotron";
-import { Timer } from "../components/timer";
-import { Footer } from "../components/footer";
-import { Gifts } from "../components/gifts";
+import { Invitation } from "../components/Invitation";
+import { Jumbotron } from "../components/Jumbotron";
+import { Timer } from "../components/Timer";
+import { Footer } from "../components/Footer";
+import { UnderConstruction } from "../components/UnderConstruction";
 
 const Home: NextPage = () => {
   return (
@@ -13,13 +13,11 @@ const Home: NextPage = () => {
       <Head>
         <title>Zyanya & Jesus - Nuestra Boda</title>
       </Head>
-      <div className={styles.app}>
-        <Jumbotron />
-        <Invitation />
-        <Timer />
-        <Gifts />
-        <Footer />
-      </div>
+      <Jumbotron />
+      <Invitation />
+      <Timer />
+      <UnderConstruction />
+      <Footer />
     </>
   );
 };

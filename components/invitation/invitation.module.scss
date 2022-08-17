@@ -1,3 +1,7 @@
+$satin-sheen-gold: #ce9c3c;
+$periwinkle: #c0cee6;
+$cta-color: $periwinkle;
+
 .container {
   background-color: #f5f6f3;
   font-family: "Lato", sans-serif;
@@ -18,29 +22,38 @@
 .cardContainer {
   display: flex;
   justify-content: center;
-  min-height: 30rem;
-  background-image: url("/bg-flowers.png");
-  background-size: contain;
   align-items: center;
-  text-align: center;
-  flex-direction: column;
-  padding: 2rem;
+  flex-direction: row;
+  background-image: url("/bg-flower2.png");
+  background-size: contain;
+  min-height: 30rem;
+  @media (max-width: 600px) {
+    flex-direction: column;
+    padding: 2rem 0;
+  }
 }
 
 .card {
-  border-width: 2px;
+  border-width: 1px;
+  border-color: $cta-color;
   border-radius: 12px;
-  border-color: #e4bc62;
-  /* background-color: #fffff8; */
   background-color: #f5f6f3;
-  margin: 1rem 0;
+  margin: 1rem;
   padding: 1rem;
   width: 326px;
+  min-height: 370px;
+  text-align: center;
+  @media (max-width: 600px) {
+    min-height: 320px;
+  }
 }
 
 .cardTitle {
   font-weight: 800;
-  display: flex;
+  padding: 1rem 0;
+  @media (max-width: 600px) {
+    padding: 0.5rem;
+  }
 }
 
 .cardSubtitle {
@@ -50,20 +63,13 @@
 
 .description {
   font-family: "Lato", sans-serif;
+  @media (max-width: 600px) {
+    padding: 1rem 0.5rem;
+  }
 }
 
 .button {
-  background-color: #e4bc62 !important;
+  background-color: $satin-sheen-gold !important;
   margin: 1rem 0;
   color: white;
-}
-
-@media (max-width: 600px) {
-  .cardTitle {
-    padding: 0.5rem 0.5rem;
-  }
-
-  .description {
-    padding: 1rem 0.5rem;
-  }
 }

@@ -2,7 +2,7 @@ import { Box, Button, ButtonGroup, Link, Text } from "@chakra-ui/react";
 import styles from "./invitation.module.scss";
 import { atcb_action, atcb_init } from "add-to-calendar-button";
 import { useEffect } from "react";
-import { Emoji } from "../custom/Emoji";
+import { Emoji } from "../Custom";
 
 export function Invitation() {
   useEffect(() => {
@@ -36,7 +36,10 @@ export function Invitation() {
         </Text>
       </Box>
       <Box className={styles.cardContainer}>
-        <Box className={styles.card}>
+        <Box className={styles.card} shadow="lg">
+          <Text fontSize="lg" className={styles.cardSubtitle}>
+            Fecha y horario
+          </Text>
           <Text fontSize="3xl" className={styles.cardTitle}>
             5 de Noviembre de 2022
           </Text>
@@ -54,7 +57,29 @@ export function Invitation() {
             Guardar en calendario
           </Button>
         </Box>
-        <Box className={styles.card}>
+        <Box className={styles.card} shadow="lg">
+          <Text fontSize="lg" className={styles.cardSubtitle}>
+            Indicaciones
+          </Text>
+          <Text fontSize="3xl" className={styles.cardTitle}>
+            Vestimenta formal
+          </Text>
+          <Box className={styles.description}>
+            <Text fontSize="lg">
+              <Emoji symbol="🧍" label="hombe" />
+              {`Hombres: Guyabera Blanca`}
+            </Text>
+            <Text fontSize="lg">
+              <Emoji symbol="👗" label="mujer" />
+              Mujeres: Vestido largo
+            </Text>
+          </Box>
+          <Text fontSize="3xl" className={styles.cardTitle}>
+            <Emoji symbol="👫" label="pareja" />
+            Sólo adultos
+          </Text>
+        </Box>
+        <Box className={styles.card} shadow="lg">
           <Text fontSize="lg" className={styles.cardSubtitle}>
             Misa
           </Text>
@@ -62,11 +87,10 @@ export function Invitation() {
             Iglesia Católica De Yaxcopoil
           </Text>
           <Text fontSize="lg" className={styles.description}>
-            Ubicada a un costado de la Hacienda Yaxcopoil. Te recomendamos
-            llegar directamente a la hacienda, su dirección se encuentra abajo.
+            Ubicada a un costado de la Hacienda Yaxcopoil.
           </Text>
         </Box>
-        <Box className={styles.card}>
+        <Box className={styles.card} shadow="lg">
           <Text fontSize="lg" className={styles.cardSubtitle}>
             Recepción
           </Text>

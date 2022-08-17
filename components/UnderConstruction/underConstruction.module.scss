@@ -1,24 +1,12 @@
 .container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  min-height: 30rem;
-  font-family: "Lato", sans-serif;
   background-color: #f5f6f3;
-  padding: 2rem;
+  font-family: "Lato", sans-serif;
+  color: #064420;
 }
 
-.title {
+.coming {
   font-weight: 800;
-  padding: 1rem;
-}
-
-.titleContainer {
-  font-weight: 800;
-  padding: 1rem;
-  text-align: center;
+  color: #e4bc62;
 }
 
 .cardContainer {
@@ -26,6 +14,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  background-size: contain;
   min-height: 30rem;
   @media (max-width: 600px) {
     flex-direction: column;
@@ -33,13 +22,18 @@
   }
 }
 
+.title {
+  font-weight: 800;
+  padding: 1rem;
+}
+
 .card {
   border-width: 2px;
   border-radius: 12px;
   border-color: #e4bc62;
-  /* background-color: #fffff8; */
   background-color: white;
   margin: 1rem 0;
   padding: 1rem;
+  text-align: center;
   width: 326px;
 }
