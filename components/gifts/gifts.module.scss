@@ -1,3 +1,6 @@
+$main-white: #f5f6f3;
+$button-cta: #dc9001;
+
 .container {
   display: flex;
   justify-content: center;
@@ -6,7 +9,7 @@
   text-align: center;
   min-height: 30rem;
   font-family: "Lato", sans-serif;
-  background-color: #f5f6f3;
+  background-color: $main-white;
   padding: 2rem;
 }
 
@@ -37,9 +40,13 @@
   border-width: 2px;
   border-radius: 12px;
   border-color: #e4bc62;
-  /* background-color: #fffff8; */
   background-color: white;
   margin: 1rem 0;
   padding: 1rem;
   width: 326px;
+}
+
+.button {
+  background-color: $button-cta !important;
+  color: $main-white;
 }

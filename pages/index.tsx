@@ -4,7 +4,8 @@ import { Invitation } from "../components/invitation";
 import { Jumbotron } from "../components/jumbotron";
 import { Timer } from "../components/timer";
 import { Footer } from "../components/footer";
-import { UnderConstruction } from "../components/underConstruction";
+import { Gifts } from "../components/gifts";
+import { Intro } from "../components/intro";
 
 const Home: NextPage = () => {
   return (
@@ -14,8 +15,9 @@ const Home: NextPage = () => {
       </Head>
       <Jumbotron />
       <Invitation />
+      <Intro />
       <Timer />
-      <UnderConstruction />
+      <Gifts />
       <Footer />
     </>
   );

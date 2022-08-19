@@ -1,4 +1,5 @@
 $satin-sheen-gold: #ce9c3c;
+$button-cta: #dc9001;
 $periwinkle: #c0cee6;
 $cta-color: $periwinkle;
 
@@ -27,7 +28,7 @@ $cta-color: $periwinkle;
   background-image: url("/bg-flower2.png");
   background-size: contain;
   min-height: 30rem;
-  @media (max-width: 600px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
     padding: 2rem 0;
   }
@@ -69,7 +70,7 @@ $cta-color: $periwinkle;
 }
 
 .button {
-  background-color: $satin-sheen-gold !important;
+  background-color: $button-cta !important;
   margin: 1rem 0;
   color: white;
 }

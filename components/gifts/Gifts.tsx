@@ -1,11 +1,5 @@
 import { Box, Flex, Text, Image, Button } from "@chakra-ui/react";
-import styles from "./gifts.module.css";
-
-const data = {
-  imageURL:
-    "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-  name: "Spa en la playa",
-};
+import styles from "./gifts.module.scss";
 
 function Gifts() {
   return (
@@ -16,17 +10,22 @@ function Gifts() {
         </Text>
       </Box>
       <Box maxWidth="md" textAlign="justify">
-        {`Nuestro hogar está casi completo, es por eso que no
-        tenemos una mesa de regalos en una tienda. En esta sección
-        podrás regalarnos experiencias para disfrutar en nuestra luna de miel.`}
+        <Text fontSize="lg">
+          Nuestro hogar está casi completo, es por eso que no tenemos una mesa
+          de regalos en una tienda. En esta sección podrás regalarnos
+          experiencias para disfrutar en nuestra luna de miel.
+        </Text>
         <br />
-        Maldivas 🛫 Abu Dhabi 🛬 Dubai
+        <Text fontSize="xl" textAlign="center" fontWeight="medium">
+          Maldivas 🏖️ Abu Dhabi 🏜️ Dubai
+        </Text>
       </Box>
       <Box className={styles.cardContainer}>
+        {/** MOVE TO COMPONENT */}
         <Box maxW="sm" borderWidth="1px" rounded="lg" shadow="lg">
           <Image
-            src={data.imageURL}
-            alt={`Picture of ${data.name}`}
+            src="/spa-maldivas.png"
+            alt={`Picture of Spa en la playa`}
             roundedTop="lg"
           />
           <Box p="6">
@@ -37,14 +36,55 @@ function Gifts() {
                 as="h4"
                 lineHeight="tight"
                 isTruncated
+                p="0.5rem"
               >
-                {data.name}
+                Spa a la orilla de la playa
               </Box>
             </Flex>
-
-            <Flex justifyContent="space-between" alignItems="center" p="1">
+            <Flex
+              justifyContent="space-between"
+              alignItems="center"
+              p="1rem"
+              fontSize="2xl"
+            >
               $2000
-              <Button size="md">Regalar</Button>
+              <Button size="md" className={styles.button}>
+                Regalar
+              </Button>
+            </Flex>
+          </Box>
+        </Box>
+
+        {/** MOVE TO COMPONENT */}
+        <Box maxW="sm" borderWidth="1px" rounded="lg" shadow="lg" mt="2rem">
+          <Image
+            src="/safari-desierto.png"
+            alt={`Picture of Tour en el desierto`}
+            roundedTop="lg"
+          />
+          <Box p="6">
+            <Flex mt="1" justifyContent="space-between" alignContent="center">
+              <Box
+                fontSize="2xl"
+                fontWeight="semibold"
+                as="h4"
+                lineHeight="tight"
+                isTruncated
+                p="0.5rem"
+              >
+                Safari en el desierto
+              </Box>
+            </Flex>
+            <Flex
+              justifyContent="space-between"
+              alignItems="center"
+              p="1rem"
+              fontSize="2xl"
+            >
+              $1500
+              <Button size="md" className={styles.button}>
+                Regalar
+              </Button>
             </Flex>
           </Box>
         </Box>
