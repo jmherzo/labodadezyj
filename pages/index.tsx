@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Zyanya & Jesus - Nuestra Boda</title>
+        <title>{`Zyanya Andrea & Jesus Manuel - Nuestra Boda`}</title>
       </Head>
       <Jumbotron />
       <Invitation />

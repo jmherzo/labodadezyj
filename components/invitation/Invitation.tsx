@@ -12,7 +12,7 @@ export function Invitation() {
   function onSubmit(e: any) {
     e.preventDefault();
     atcb_action({
-      name: "Boda de Zyanya & Jesus",
+      name: "Boda de Zyanya Andrea & Jesús Manuel",
       description:
         "Puedes entrar a nustra página web para ver más detalles del evento: https://labodadezyj.com/",
       startDate: "2022-11-05",
@@ -53,6 +53,9 @@ export function Invitation() {
               Recepción a las 14:00hrs
             </Text>
           </Box>
+          <Link color="teal.500" href="https://pin.it/7Hgt3D8" isExternal>
+            <Text fontSize="lg">Conoce la hacienda</Text>
+          </Link>
           <Button size="md" onClick={onSubmit} className={styles.button}>
             Guardar en calendario
           </Button>
@@ -67,11 +70,29 @@ export function Invitation() {
           <Box className={styles.description}>
             <Text fontSize="lg">
               <Emoji symbol="🧍" label="hombe" />
-              {`Hombres: Guyabera Blanca`}
+              Hombres
+              <br />
+              <Link
+                color="teal.500"
+                href="https://pin.it/12IDC0Q"
+                isExternal
+                mb="1rem"
+              >
+                Guyabera blanca
+              </Link>
             </Text>
             <Text fontSize="lg">
               <Emoji symbol="👗" label="mujer" />
-              Mujeres: Vestido largo
+              Mujeres
+              <br />
+              <Link
+                color="teal.500"
+                href="https://pin.it/3oLxvLb"
+                isExternal
+                mb="1rem"
+              >
+                Vestido largo
+              </Link>
             </Text>
           </Box>
           <Text fontSize="3xl" className={styles.cardTitle}>
@@ -84,7 +105,7 @@ export function Invitation() {
             Misa
           </Text>
           <Text fontSize="3xl" className={styles.cardTitle}>
-            Iglesia Católica De Yaxcopoil
+            Capilla San Jerónimo de Yaxcopoil
           </Text>
           <Text fontSize="lg" className={styles.description}>
             Ubicada a un costado de la Hacienda Yaxcopoil.

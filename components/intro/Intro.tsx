@@ -16,15 +16,15 @@ export function Intro() {
       </Box>
       <Box>
         <Text maxWidth="lg" fontSize="xl" className={styles.introText}>
-          Gracias por formar parte del día más importante de nuestra vidas y por
-          acompañarnos en este momento tan maravilloso.
+          Hay momentos en la vida que son especiales y compartirlos con las
+          personas que quieres los convierte en inolvidables.
         </Text>
         <br />
         <Text
           fontSize="xl"
           className={styles.signature}
           fontWeight="bold"
-        >{`- Z&J`}</Text>
+        >{`- Z & J`}</Text>
       </Box>
     </Flex>
   );

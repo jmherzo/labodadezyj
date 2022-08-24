@@ -16,7 +16,9 @@ export function Jumbotron() {
       <div className={styles.content}>
         <div className={styles.topContent}>
           <h2 className={styles.description}>La boda de</h2>
-          <h1 className={styles.title}>Zyanya & Jesús</h1>
+          <h1 className={styles.title}>{`Zyanya Andrea`}</h1>
+          <h1 className={styles.title}>{`&`}</h1>
+          <h1 className={styles.title}>{`Jesús Manuel`}</h1>
         </div>
         <div className={styles.bottomContent}>
           <h3 className={styles.description}> Aparta la fecha </h3>

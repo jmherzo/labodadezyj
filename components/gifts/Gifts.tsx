@@ -6,7 +6,7 @@ function Gifts() {
     <Box className={styles.container}>
       <Box className={styles.titleContainer}>
         <Text fontSize="2xl" className={styles.title}>
-          Regalos
+          Mesa de Regalos
         </Text>
       </Box>
       <Box maxWidth="md" textAlign="justify">
@@ -17,6 +17,8 @@ function Gifts() {
         </Text>
         <br />
         <Text fontSize="xl" textAlign="center" fontWeight="medium">
+          Nuestra luna de miel:
+          <br />
           Maldivas 🏖️ Abu Dhabi 🏜️ Dubai
         </Text>
       </Box>

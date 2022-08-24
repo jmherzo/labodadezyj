@@ -29,6 +29,9 @@ $main-white: #f5f6f3;
   .introText {
     font-family: "Lato", sans-serif;
     padding: 2rem 2rem 0 2rem;
+    @media (max-width: 600px) {
+      padding: 0 2rem;
+    }
   }
 
   .signature {
