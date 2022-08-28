@@ -1,0 +1,16 @@
+$button-cta: #dc9001;
+$main-white: #f5f6f3;
+
+.button {
+  background-color: $button-cta !important;
+  color: $main-white;
+}
+
+.card {
+  // display: flex;
+  margin: 1rem;
+  // height: 200px;
+  @media (max-width: 600px) {
+    margin: 1rem 0;
+  }
+}

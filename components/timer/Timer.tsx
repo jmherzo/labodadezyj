@@ -25,7 +25,6 @@ export function Timer() {
         date={"2022-11-05T14:00:00"}
         renderer={({ days, hours, minutes, seconds, completed }: any) => {
           if (completed) {
-            // TODO: test today
             return "It's today!";
           } else {
             return (

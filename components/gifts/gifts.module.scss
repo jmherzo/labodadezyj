@@ -1,6 +1,4 @@
 $main-white: #f5f6f3;
-$button-cta: #dc9001;
-
 .container {
   display: flex;
   justify-content: center;
@@ -28,7 +26,7 @@ $button-cta: #dc9001;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   min-height: 30rem;
   @media (max-width: 600px) {
     flex-direction: column;
@@ -44,9 +42,4 @@ $button-cta: #dc9001;
   margin: 1rem 0;
   padding: 1rem;
   width: 326px;
-}
-
-.button {
-  background-color: $button-cta !important;
-  color: $main-white;
 }

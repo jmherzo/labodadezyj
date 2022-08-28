@@ -1,97 +1,84 @@
 import { Box, Flex, Text, Image, Button } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import { useEffect, useRef } from "react";
+import { CardWithImage } from "../custom/cardWithImage";
 import styles from "./gifts.module.scss";
 
 function Gifts() {
-  return (
-    <Box className={styles.container}>
-      <Box className={styles.titleContainer}>
-        <Text fontSize="2xl" className={styles.title}>
-          Mesa de Regalos
-        </Text>
-      </Box>
-      <Box maxWidth="md" textAlign="justify">
-        <Text fontSize="lg">
-          Nuestro hogar está casi completo, es por eso que no tenemos una mesa
-          de regalos en una tienda. En esta sección podrás regalarnos
-          experiencias para disfrutar en nuestra luna de miel.
-        </Text>
-        <br />
-        <Text fontSize="xl" textAlign="center" fontWeight="medium">
-          Nuestra luna de miel:
-          <br />
-          Maldivas 🏖️ Abu Dhabi 🏜️ Dubai
-        </Text>
-      </Box>
-      <Box className={styles.cardContainer}>
-        {/** MOVE TO COMPONENT */}
-        <Box maxW="sm" borderWidth="1px" rounded="lg" shadow="lg">
-          <Image
-            src="/spa-maldivas.png"
-            alt={`Picture of Spa en la playa`}
-            roundedTop="lg"
-          />
-          <Box p="6">
-            <Flex mt="1" justifyContent="space-between" alignContent="center">
-              <Box
-                fontSize="2xl"
-                fontWeight="semibold"
-                as="h4"
-                lineHeight="tight"
-                isTruncated
-                p="0.5rem"
-              >
-                Spa a la orilla de la playa
-              </Box>
-            </Flex>
-            <Flex
-              justifyContent="space-between"
-              alignItems="center"
-              p="1rem"
-              fontSize="2xl"
-            >
-              $2000
-              <Button size="md" className={styles.button}>
-                Regalar
-              </Button>
-            </Flex>
-          </Box>
-        </Box>
+  const sectionRef = useRef<HTMLElement>(null);
+  const router = useRouter();
+  useEffect(() => {
+    if (router.asPath === "/regalos") {
+      console.log("asPath", router.asPath);
+      if (sectionRef.current) {
+        sectionRef.current?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [router.asPath]);
 
-        {/** MOVE TO COMPONENT */}
-        <Box maxW="sm" borderWidth="1px" rounded="lg" shadow="lg" mt="2rem">
-          <Image
-            src="/safari-desierto.png"
-            alt={`Picture of Tour en el desierto`}
-            roundedTop="lg"
-          />
-          <Box p="6">
-            <Flex mt="1" justifyContent="space-between" alignContent="center">
-              <Box
-                fontSize="2xl"
-                fontWeight="semibold"
-                as="h4"
-                lineHeight="tight"
-                isTruncated
-                p="0.5rem"
-              >
-                Safari en el desierto
-              </Box>
-            </Flex>
-            <Flex
-              justifyContent="space-between"
-              alignItems="center"
-              p="1rem"
-              fontSize="2xl"
-            >
-              $1500
-              <Button size="md" className={styles.button}>
-                Regalar
-              </Button>
-            </Flex>
-          </Box>
+  return (
+    <section ref={sectionRef} id="mesa-de-regalos">
+      <Box className={styles.container}>
+        <Box className={styles.titleContainer}>
+          <Text fontSize="2xl" className={styles.title}>
+            Mesa de Regalos
+          </Text>
         </Box>
+        <Box maxWidth="md" textAlign="justify">
+          <Text fontSize="lg">
+            Nuestro hogar está casi completo, es por eso que no tenemos una mesa
+            de regalos en una tienda. En esta sección podrás regalarnos
+            experiencias para disfrutar en nuestra luna de miel.
+          </Text>
+          <br />
+          <Text fontSize="xl" textAlign="center" fontWeight="medium">
+            Nuestra luna de miel:
+            <br />
+            Maldivas 🏖️ Abu Dhabi 🏜️ Dubai
+          </Text>
+        </Box>
+        <Box className={styles.cardContainer}>
+          <CardWithImage
+            src="/spa-maldivas.png"
+            altSrc="Imagen de Spa en la playa"
+            title="Spa a la orilla de la playa"
+            price={2000}
+            cta="Regalar"
+          />
+          <CardWithImage
+            src="/safari-desierto.png"
+            altSrc="Imagen de Tour en el desierto"
+            title="Safari en el desierto"
+            price={1200}
+            cta="Regalar"
+          />
+          <CardWithImage
+            src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+            altSrc="Imagen de Buceo en el océano"
+            title="Buceo en las Maldivas"
+            price={1500}
+            cta="Regalar"
+          />
+          <CardWithImage
+            src="/romantic-dinner.png"
+            altSrc="Imagen de cena romántica"
+            title="Cena Romántica"
+            price={1000}
+            cta="Regalar"
+          />
+        </Box>
+        {/* <a
+          data-pin-do="embedBoard"
+          data-pin-board-width="400"
+          data-pin-scale-height="240"
+          data-pin-scale-width="80"
+          href="https://www.pinterest.com.mx/zyzya/vestidos-hacienda"
+        ></a>
+        <script async defer src="//assets.pinterest.com/js/pinit.js"></script> */}
       </Box>
-    </Box>
+    </section>
   );
 }
 
