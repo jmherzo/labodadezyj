@@ -7,7 +7,7 @@ export function Intro() {
     <Flex className={styles.container}>
       <Box className={styles.introImage}>
         <NextImage
-          src="/delamano.png"
+          src="/de-la-mano-min.webp"
           alt="de la mano"
           width="300px"
           height="300px"

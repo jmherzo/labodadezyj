@@ -1,6 +1,5 @@
 import { Button as ChakraButton, Text } from "@chakra-ui/react";
 import { MouseEventHandler, ReactNode } from "react";
-import styles from "./button.module.scss";
 
 type ButtonProps = {
   children: ReactNode;
@@ -8,12 +7,7 @@ type ButtonProps = {
 };
 export function Button({ children, onClick }: ButtonProps) {
   return (
-    <ChakraButton
-      onClick={onClick}
-      rounded="lg"
-      size="md"
-      className={styles.button}
-    >
+    <ChakraButton onClick={onClick} rounded="lg" size="md" colorScheme="cta">
       <Text fontSize="lg">{children}</Text>
     </ChakraButton>
   );

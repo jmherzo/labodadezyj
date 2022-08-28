@@ -41,8 +41,8 @@ function CardWithImage({ src, altSrc, title, price, cta }: CardWithImageProps) {
           pb="1rem"
           fontWeight="bold"
         >
-          <Text fontSize="2xl">{`$${price} `}</Text>{" "}
-          <Text fontSize="md">{` MXN`}</Text>
+          <Text fontSize="2xl" pr="0.25rem">{`$${price}`}</Text>
+          <Text fontSize="md">{`MXN`}</Text>
         </Flex>
         <Button>{cta}</Button>
       </Flex>

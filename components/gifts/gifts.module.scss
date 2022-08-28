@@ -6,7 +6,6 @@ $main-white: #f5f6f3;
   align-items: center;
   text-align: center;
   min-height: 30rem;
-  font-family: "Lato", sans-serif;
   background-color: $main-white;
   padding: 2rem;
 }
@@ -26,7 +25,7 @@ $main-white: #f5f6f3;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
   min-height: 30rem;
   @media (max-width: 600px) {
     flex-direction: column;

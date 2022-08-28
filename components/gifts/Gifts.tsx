@@ -26,7 +26,7 @@ function Gifts() {
             Mesa de Regalos
           </Text>
         </Box>
-        <Box maxWidth="md" textAlign="justify">
+        <Box maxWidth={["md", "lg"]} textAlign="justify" mb="1rem">
           <Text fontSize="lg">
             Nuestro hogar está casi completo, es por eso que no tenemos una mesa
             de regalos en una tienda. En esta sección podrás regalarnos
@@ -51,21 +51,35 @@ function Gifts() {
             src="/safari-desierto.png"
             altSrc="Imagen de Tour en el desierto"
             title="Safari en el desierto"
-            price={1200}
+            price={1250}
             cta="Regalar"
           />
           <CardWithImage
             src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
             altSrc="Imagen de Buceo en el océano"
             title="Buceo en las Maldivas"
-            price={1500}
+            price={1520}
+            cta="Regalar"
+          />
+          <CardWithImage
+            src="/paseo-catamaran.jpeg"
+            altSrc="Imagen de Paseo en catamaran"
+            title="Paseo en catamaran"
+            price={1850}
             cta="Regalar"
           />
           <CardWithImage
             src="/romantic-dinner.png"
-            altSrc="Imagen de cena romántica"
-            title="Cena Romántica"
-            price={1000}
+            altSrc="Imagen de cena en el desierto"
+            title="Cena en el desierto"
+            price={2507}
+            cta="Regalar"
+          />
+          <CardWithImage
+            src="/sheraton-jet-ski-min.webp"
+            altSrc="Imagen de picnic en una isla"
+            title="Picnic en una isla"
+            price={2200}
             cta="Regalar"
           />
         </Box>
