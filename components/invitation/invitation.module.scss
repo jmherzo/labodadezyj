@@ -7,70 +7,27 @@ $cta-color: $periwinkle;
   background-color: #f5f6f3;
   font-family: "Lato", sans-serif;
   color: #064420;
-}
 
-.titleContainer {
-  display: flex;
-  justify-content: center;
-  padding: 1rem 1rem 0;
-}
+  .titleContainer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 1rem 0;
 
-.title {
-  font-weight: 800;
-  padding: 1rem;
-}
-
-.cardContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  background-image: url("/bg-flower2.png");
-  background-size: contain;
-  min-height: 30rem;
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    padding: 2rem 0;
+    .title {
+      font-weight: 800;
+      padding: 1rem;
+    }
   }
-}
-
-.card {
-  border-width: 1px;
-  border-color: $cta-color;
-  border-radius: 12px;
-  background-color: #f5f6f3;
-  margin: 1rem;
-  padding: 1rem;
-  width: 326px;
-  min-height: 370px;
-  text-align: center;
-  @media (max-width: 600px) {
-    min-height: 320px;
+  .cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-image: url("/bg-flower2.png");
+    background-size: contain;
+    min-height: 30rem;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
   }
-}
-
-.cardTitle {
-  font-weight: 800;
-  padding: 1rem 0;
-  @media (max-width: 600px) {
-    padding: 0.5rem;
-  }
-}
-
-.cardSubtitle {
-  font-weight: 800;
-  padding-top: 0.5rem;
-}
-
-.description {
-  font-family: "Lato", sans-serif;
-  @media (max-width: 600px) {
-    padding: 1rem 0.5rem;
-  }
-}
-
-.button {
-  background-color: $button-cta !important;
-  margin: 1rem 0;
-  color: white;
 }

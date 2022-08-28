@@ -1,5 +1,6 @@
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import styles from "./cardWithImage.module.scss";
+import { Button } from "../button";
 
 type CardWithImageProps = {
   src: string;
@@ -27,27 +28,24 @@ function CardWithImage({ src, altSrc, title, price, cta }: CardWithImageProps) {
         fit="cover"
         roundedTop="lg"
       />
-      <Box p="6">
+      <Flex flexDir="column" p="1rem">
+        <Box p="0.5rem">
+          <Text fontSize="2xl" lineHeight="tight" className={styles.title}>
+            {title}
+          </Text>
+        </Box>
         <Flex
-          mt="1"
           justifyContent="center"
-          alignContent="center"
+          alignItems="baseline"
+          p="0.5rem"
+          pb="1rem"
           fontWeight="bold"
         >
-          <Box fontSize="xl" as="h4" lineHeight="tight" p="0.5rem">
-            <Text>{title}</Text>
-          </Box>
-        </Flex>
-        <Flex justifyContent="center" alignItems="baseline" p="0.5rem">
           <Text fontSize="2xl">{`$${price} `}</Text>{" "}
           <Text fontSize="md">{` MXN`}</Text>
         </Flex>
-        <Flex pt="0.5rem">
-          <Button rounded="xl" flex="auto" size="lg" className={styles.button}>
-            <Text fontSize="xl">{cta}</Text>
-          </Button>
-        </Flex>
-      </Box>
+        <Button>{cta}</Button>
+      </Flex>
     </Box>
   );
 }

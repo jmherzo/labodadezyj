@@ -1,6 +1,7 @@
 import jumbotronLouvre from "../../public/jumbotronLouvre.jpg";
 import Image from "next/image";
-import styles from "./jumbotron.module.css";
+import styles from "./jumbotron.module.scss";
+import { Flex } from "@chakra-ui/react";
 
 export function Jumbotron() {
   return (
@@ -13,7 +14,7 @@ export function Jumbotron() {
         placeholder="blur"
         priority
       />
-      <div className={styles.content}>
+      <Flex flexDirection="column" className={styles.content}>
         <div className={styles.topContent}>
           <h2 className={styles.description}>La boda de</h2>
           <h1 className={styles.title}>{`Zyanya Andrea`}</h1>
@@ -24,7 +25,7 @@ export function Jumbotron() {
           <h3 className={styles.description}> Aparta la fecha </h3>
           <h3 className={styles.weddingDate}>05 - Nov - 2022</h3>
         </div>
-      </div>
+      </Flex>
     </main>
   );
 }
