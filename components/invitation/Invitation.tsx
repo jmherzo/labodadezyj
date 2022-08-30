@@ -117,7 +117,7 @@ export function Invitation() {
               </Button>
               <Button>
                 <Link
-                  href="https://ul.waze.com/ul?place=ChIJM1WdKBcVVo8R806uVYCRtHk&ll=20.74629420%2C-89.72273560&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+                  href={`https://ul.waze.com/ul?preview_venue_id=177144015.1771309082.14532059&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location`}
                   isExternal
                 >
                   Waze

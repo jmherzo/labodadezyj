@@ -16,9 +16,10 @@ const theme = extendTheme({
       "800": "#624204",
       "900": "#312102",
     },
+    mainWhite: "#f5f6f3",
   },
   fonts: {
-    heading: `Satisfy, cursive, ${baseTheme?.fonts.heading}`,
+    heading: `Lato, cursive, ${baseTheme?.fonts.heading}`,
     body: `Lato, ${baseTheme?.fonts.body}`,
   },
   components: {

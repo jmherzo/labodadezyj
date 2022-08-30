@@ -6,6 +6,7 @@ import { Timer } from "../components/timer";
 import { Footer } from "../components/footer";
 import { Gifts } from "../components/gifts";
 import { Intro } from "../components/intro";
+import { Recommendations } from "../components/recommendations";
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
       <Intro />
       <Timer />
       <Gifts />
+      <Recommendations />
       <Footer />
     </>
   );

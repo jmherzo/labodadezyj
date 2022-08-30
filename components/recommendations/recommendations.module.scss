@@ -12,15 +12,14 @@
       padding: 1rem;
     }
   }
-  .cardContainer {
+
+  .bodyContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("/bg-flower2.png");
     flex-wrap: wrap;
-    background-size: contain;
-    min-height: 30rem;
-    @media (max-width: 600) {
+    min-height: 20rem;
+    @media (max-width: 600px) {
       flex-direction: column;
     }
   }
