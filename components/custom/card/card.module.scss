@@ -1,0 +1,38 @@
+$button-cta: #dc9001;
+$title: #002f59;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-width: 1px;
+  border-radius: 12px;
+  background-color: #f5f6f3;
+  margin: 1rem;
+  padding: 1.5rem;
+  width: 326px;
+  min-height: 370px;
+  @media (max-width: 600px) {
+    min-height: 320px;
+  }
+
+  .cardTitle {
+    font-weight: bold;
+    padding: 1rem 0;
+    color: $title;
+    @media (max-width: 600px) {
+      padding: 0.5rem;
+    }
+  }
+
+  .cardSubtitle {
+    padding-top: 0.5rem;
+  }
+
+  .description {
+    @media (max-width: 600px) {
+      padding: 1rem 0.5rem;
+    }
+  }
+}

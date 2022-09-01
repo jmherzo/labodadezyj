@@ -1,0 +1,12 @@
+$title: #002f59;
+
+.card {
+  margin: 1rem;
+  @media (max-width: 600px) {
+    margin: 1rem 0;
+  }
+
+  .title {
+    color: $title;
+  }
+}

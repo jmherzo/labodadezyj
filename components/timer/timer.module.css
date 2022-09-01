@@ -16,15 +16,12 @@
   align-items: center;
   padding: 0.5rem;
   color: #fffff8;
-  font-family: "Lato", sans-serif;
 }
 
 .divider {
-  font-family: "Lato", sans-serif;
   justify-content: center;
 }
 
 .title {
   font-weight: 800;
-  font-family: "Lato", sans-serif;
 }

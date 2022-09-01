@@ -1,0 +1,46 @@
+.main {
+  position: relative;
+  .content {
+    height: 100vh;
+    padding: 2rem 0;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+    text-align: center;
+    color: #fbf8f1;
+
+    .topContent {
+      margin: 1rem 0.5rem;
+
+      .title {
+        font-size: 6rem;
+        padding: 1.5rem;
+        font-family: "Satisfy", cursive;
+        line-height: 4rem;
+        @media (max-width: 600px) {
+          padding: 0.5rem;
+          font-size: 3.5rem;
+        }
+      }
+    }
+
+    .bottomContent {
+      margin: 4rem 0;
+      .weddingDate {
+        font-size: 3.5rem;
+        font-family: "Satisfy", cursive;
+        @media (max-width: 600px) {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    .description {
+      font-size: 2.5rem;
+      @media (max-width: 600px) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

@@ -4,18 +4,22 @@ import { Invitation } from "../components/invitation";
 import { Jumbotron } from "../components/jumbotron";
 import { Timer } from "../components/timer";
 import { Footer } from "../components/footer";
-import { UnderConstruction } from "../components/underConstruction";
+import { Gifts } from "../components/gifts";
+import { Intro } from "../components/intro";
+import { Recommendations } from "../components/recommendations";
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Zyanya & Jesus - Nuestra Boda</title>
+        <title>{`Zyanya Andrea & Jesus Manuel - Nuestra Boda`}</title>
       </Head>
       <Jumbotron />
       <Invitation />
+      <Intro />
       <Timer />
-      <UnderConstruction />
+      <Gifts />
+      <Recommendations />
       <Footer />
     </>
   );

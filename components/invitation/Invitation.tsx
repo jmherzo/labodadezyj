@@ -1,8 +1,18 @@
-import { Box, Button, ButtonGroup, Link, Text } from "@chakra-ui/react";
+import { Box, ButtonGroup, Link, Stack, Text } from "@chakra-ui/react";
 import styles from "./invitation.module.scss";
 import { atcb_action, atcb_init } from "add-to-calendar-button";
 import { useEffect } from "react";
 import { Emoji } from "../emoji";
+import { Card } from "../custom/card";
+import { Button } from "../custom/button";
+
+const labels = {
+  fechaYHora: "Fecha y Horario",
+  fecha: "5 de Noviembre de 2022",
+  guardarEnCalendario: "Guardar en Calendario",
+  indicaciones: "Indicaciones",
+  vestimentaFormal: "Vestimenta Formal",
+};
 
 export function Invitation() {
   useEffect(() => {
@@ -12,7 +22,7 @@ export function Invitation() {
   function onSubmit(e: any) {
     e.preventDefault();
     atcb_action({
-      name: "Boda de Zyanya & Jesus",
+      name: "Boda de Zyanya Andrea & Jesús Manuel",
       description:
         "Puedes entrar a nustra página web para ver más detalles del evento: https://labodadezyj.com/",
       startDate: "2022-11-05",
@@ -36,87 +46,96 @@ export function Invitation() {
         </Text>
       </Box>
       <Box className={styles.cardContainer}>
-        <Box className={styles.card} shadow="lg">
-          <Text fontSize="lg" className={styles.cardSubtitle}>
-            Fecha y horario
+        <Card
+          subtitle={labels.fechaYHora}
+          title={labels.fecha}
+          bottom={
+            <Button onClick={onSubmit}>{labels.guardarEnCalendario}</Button>
+          }
+        >
+          <Text fontSize="lg">
+            <Emoji symbol="⛪" label="Iglesia" />
+            Misa a las 13:00hrs
           </Text>
-          <Text fontSize="3xl" className={styles.cardTitle}>
-            5 de Noviembre de 2022
+          <Text fontSize="lg">
+            <Emoji symbol="🎉" label="Hacienda" />
+            Recepción a las 14:00hrs
           </Text>
-          <Box className={styles.description}>
-            <Text fontSize="lg">
-              <Emoji symbol="⛪" label="Iglesia" />
-              Misa a las 13:00hrs
+          <Link color="teal.500" href="https://pin.it/7Hgt3D8" isExternal>
+            <Text fontSize="lg">Conoce la hacienda</Text>
+          </Link>
+        </Card>
+        <Card
+          subtitle={labels.indicaciones}
+          title={labels.vestimentaFormal}
+          bottom={
+            <Text fontSize="2xl">
+              <Emoji symbol="👫" label="pareja" />
+              Sólo adultos
             </Text>
-            <Text fontSize="lg">
-              <Emoji symbol="🎉" label="Hacienda" />
-              Recepción a las 14:00hrs
-            </Text>
-          </Box>
-          <Button size="md" onClick={onSubmit} className={styles.button}>
-            Guardar en calendario
-          </Button>
-        </Box>
-        <Box className={styles.card} shadow="lg">
-          <Text fontSize="lg" className={styles.cardSubtitle}>
-            Indicaciones
+          }
+        >
+          <Text fontSize="lg">
+            <Emoji symbol="🧍" label="hombe" />
+            Hombres:{" "}
+            <Link
+              color="teal.500"
+              href="https://pin.it/12IDC0Q"
+              isExternal
+              mb="1rem"
+            >
+              Guyabera blanca
+            </Link>
           </Text>
-          <Text fontSize="3xl" className={styles.cardTitle}>
-            Vestimenta formal
+          <Text fontSize="lg">
+            <Emoji symbol="👗" label="mujer" />
+            Mujeres:{" "}
+            <Link
+              color="teal.500"
+              href="https://pin.it/3oLxvLb"
+              isExternal
+              mb="1rem"
+            >
+              Vestido largo
+            </Link>
           </Text>
-          <Box className={styles.description}>
-            <Text fontSize="lg">
-              <Emoji symbol="🧍" label="hombe" />
-              {`Hombres: Guyabera Blanca`}
-            </Text>
-            <Text fontSize="lg">
-              <Emoji symbol="👗" label="mujer" />
-              Mujeres: Vestido largo
-            </Text>
-          </Box>
-          <Text fontSize="3xl" className={styles.cardTitle}>
-            <Emoji symbol="👫" label="pareja" />
-            Sólo adultos
-          </Text>
-        </Box>
-        <Box className={styles.card} shadow="lg">
-          <Text fontSize="lg" className={styles.cardSubtitle}>
-            Misa
-          </Text>
-          <Text fontSize="3xl" className={styles.cardTitle}>
-            Iglesia Católica De Yaxcopoil
-          </Text>
-          <Text fontSize="lg" className={styles.description}>
+        </Card>
+        <Card subtitle="Misa" title="Capilla San Jerónimo de Yaxcopoil">
+          <Text fontSize="lg">
             Ubicada a un costado de la Hacienda Yaxcopoil.
           </Text>
-        </Box>
-        <Box className={styles.card} shadow="lg">
-          <Text fontSize="lg" className={styles.cardSubtitle}>
-            Recepción
-          </Text>
-          <Text fontSize="3xl" className={styles.cardTitle}>
-            Hacienda Yaxcopoil
-          </Text>
-          <Text fontSize="lg" className={styles.description}>
+        </Card>
+        <Card
+          subtitle="Recepción"
+          title=" Hacienda Yaxcopoil"
+          bottom={
+            <Stack spacing="3" padding="3">
+              <Link
+                color="green.600"
+                href="https://goo.gl/maps/MLarKrS2r8sRNzzp7"
+                isExternal
+              >
+                <Text fontWeight="bold" fontSize="lg">
+                  Abrir en Google Maps
+                </Text>
+              </Link>
+              <Link
+                color="blue.400"
+                href={`https://ul.waze.com/ul?preview_venue_id=177144015.1771309082.14532059&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location`}
+                isExternal
+              >
+                <Text fontWeight="bold" fontSize="lg">
+                  Abrir en Waze
+                </Text>
+              </Link>
+            </Stack>
+          }
+        >
+          <Text fontSize="lg">
             Calle 21 Número 500. Yaxcopoil, Yucatán, C. P. 97396. Km. 220,
             Carretera Federal 261, Mérida-Uxmal
           </Text>
-          <ButtonGroup spacing="3">
-            <Button size="md" className={styles.button}>
-              <Link href="https://goo.gl/maps/MLarKrS2r8sRNzzp7" isExternal>
-                Google Maps
-              </Link>
-            </Button>
-            <Button size="md" className={styles.button}>
-              <Link
-                href="https://ul.waze.com/ul?place=ChIJM1WdKBcVVo8R806uVYCRtHk&ll=20.74629420%2C-89.72273560&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
-                isExternal
-              >
-                Waze
-              </Link>
-            </Button>
-          </ButtonGroup>
-        </Box>
+        </Card>
       </Box>
     </Box>
   );

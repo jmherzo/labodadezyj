@@ -1,0 +1,1 @@
+export { CardWithImage } from "./CardWithImage";

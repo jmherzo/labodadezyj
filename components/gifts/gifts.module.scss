@@ -1,3 +1,4 @@
+$main-white: #f5f6f3;
 .container {
   display: flex;
   justify-content: center;
@@ -5,8 +6,7 @@
   align-items: center;
   text-align: center;
   min-height: 30rem;
-  font-family: "Lato", sans-serif;
-  background-color: #f5f6f3;
+  background-color: $main-white;
   padding: 2rem;
 }
 
@@ -25,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-wrap: wrap;
   min-height: 30rem;
   @media (max-width: 600px) {
     flex-direction: column;
@@ -37,7 +37,6 @@
   border-width: 2px;
   border-radius: 12px;
   border-color: #e4bc62;
-  /* background-color: #fffff8; */
   background-color: white;
   margin: 1rem 0;
   padding: 1rem;

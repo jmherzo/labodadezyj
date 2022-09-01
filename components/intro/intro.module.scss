@@ -1,0 +1,42 @@
+$main-white: #f5f6f3;
+
+.container {
+  min-height: 350px;
+  background-color: $main-white;
+  align-items: center;
+  justify-content: center;
+  @media (max-width: 600px) {
+    min-height: 420px;
+    flex-direction: column;
+    padding: 1rem 1rem 2rem 1rem;
+  }
+
+  .introImage {
+    transform: rotate(-2deg);
+    margin-top: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    .img {
+      border-radius: 18px;
+    }
+    @media (max-width: 1024px) {
+      padding: 2rem;
+    }
+    @media (max-width: 600px) {
+      padding: 2rem;
+      transform: rotate(0deg);
+      margin-bottom: 0;
+    }
+  }
+
+  .introText {
+    padding: 2rem 2rem 0 2rem;
+    @media (max-width: 600px) {
+      padding: 0 2rem;
+    }
+  }
+
+  .signature {
+    margin-left: 3rem;
+  }
+}
