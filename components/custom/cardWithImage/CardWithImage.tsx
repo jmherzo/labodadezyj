@@ -1,6 +1,7 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import styles from "./cardWithImage.module.scss";
 import { Button } from "../button";
+import React from "react";
 
 type CardWithImageProps = {
   src: string;
@@ -8,9 +9,17 @@ type CardWithImageProps = {
   title: string;
   price: number;
   cta: string;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-function CardWithImage({ src, altSrc, title, price, cta }: CardWithImageProps) {
+function CardWithImage({
+  src,
+  altSrc,
+  title,
+  price,
+  cta,
+  onClick,
+}: CardWithImageProps) {
   return (
     <Box
       maxW="sm"
@@ -44,7 +53,7 @@ function CardWithImage({ src, altSrc, title, price, cta }: CardWithImageProps) {
           <Text fontSize="2xl" pr="0.25rem">{`$${price}`}</Text>
           <Text fontSize="md">{`MXN`}</Text>
         </Flex>
-        <Button>{cta}</Button>
+        <Button onClick={onClick}>{cta}</Button>
       </Flex>
     </Box>
   );

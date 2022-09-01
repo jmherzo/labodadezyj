@@ -123,11 +123,11 @@ export function Recommendations() {
                   <StatGroup flexDir="column" alignItems="center">
                     <Stat py={2}>
                       <StatLabel fontSize="md">Salida del hotel</StatLabel>
-                      <StatNumber>12:00hrs</StatNumber>
+                      <StatNumber>12:00PM</StatNumber>
                       <StatLabel fontSize="md">
                         Salida de la iglesia a la hacienda
                       </StatLabel>
-                      <StatNumber>13:00hrs</StatNumber>
+                      <StatNumber>2:00PM</StatNumber>
                     </Stat>
                     <Divider />
                     <Stat py={2}>
