@@ -22,9 +22,10 @@ function Gifts() {
     }
   }, [router.asPath]);
 
-  function handleClick(e: EventHandler) {
+  //  Add correct types
+  function handleClick(e: any) {
     onOpen();
-    setMonto(e.target.value);
+    // setMonto(e.target.value);
   }
 
   return (
