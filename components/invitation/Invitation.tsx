@@ -109,20 +109,25 @@ export function Invitation() {
           subtitle="Recepción"
           title=" Hacienda Yaxcopoil"
           bottom={
-            <Stack spacing="3">
-              <Button>
-                <Link href="https://goo.gl/maps/MLarKrS2r8sRNzzp7" isExternal>
-                  Google Maps
-                </Link>
-              </Button>
-              <Button>
-                <Link
-                  href={`https://ul.waze.com/ul?preview_venue_id=177144015.1771309082.14532059&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location`}
-                  isExternal
-                >
-                  Waze
-                </Link>
-              </Button>
+            <Stack spacing="3" padding="3">
+              <Link
+                color="green.600"
+                href="https://goo.gl/maps/MLarKrS2r8sRNzzp7"
+                isExternal
+              >
+                <Text fontWeight="bold" fontSize="lg">
+                  Abrir en Google Maps
+                </Text>
+              </Link>
+              <Link
+                color="blue.400"
+                href={`https://ul.waze.com/ul?preview_venue_id=177144015.1771309082.14532059&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location`}
+                isExternal
+              >
+                <Text fontWeight="bold" fontSize="lg">
+                  Abrir en Waze
+                </Text>
+              </Link>
             </Stack>
           }
         >

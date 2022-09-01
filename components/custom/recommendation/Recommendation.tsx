@@ -1,17 +1,17 @@
-import { ReactElement, ReactNode } from "react";
+import { ReactElement } from "react";
 import { Text, Stack, Flex, Image } from "@chakra-ui/react";
 
 interface RecommendationProps {
   title: string;
-  text: string;
+  content: ReactElement | string;
   imageSrc: string;
   imageAlt: string;
-  bottom?: ReactNode;
+  bottom?: ReactElement;
 }
 
 export function Recommendation({
   title,
-  text,
+  content,
   imageSrc,
   imageAlt,
   bottom,
@@ -24,9 +24,7 @@ export function Recommendation({
       <Text fontSize="xl" fontWeight="bold">
         {title}
       </Text>
-      <Text fontSize="lg" color={"gray.600"} textAlign="justify">
-        {text}
-      </Text>
+      {content}
       {bottom}
     </Stack>
   );
