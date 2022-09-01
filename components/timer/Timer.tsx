@@ -18,7 +18,7 @@ function Digit({ digit, label }: DigitProps) {
 export function Timer() {
   return (
     <Box className={styles.container}>
-      <Text fontSize="lg" className={styles.title}>
+      <Text fontSize="2xl" className={styles.title}>
         Faltan
       </Text>
       <Countdown

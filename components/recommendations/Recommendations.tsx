@@ -34,7 +34,7 @@ export function Recommendations() {
         <Box py={6} px={10}>
           <SimpleGrid
             columns={{ base: 1, md: 2 }}
-            spacing={10}
+            spacing={12}
             justifyContent="flex-start"
           >
             <Recommendation
@@ -43,7 +43,12 @@ export function Recommendations() {
               title={"Hotel Gamma Mérida El Castellano"}
               content={
                 <Box py={2}>
-                  <Text fontSize="lg" color={"gray.600"} textAlign="justify">
+                  <Text
+                    fontSize="lg"
+                    color={"gray.600"}
+                    textAlign="justify"
+                    maxWidth="sm"
+                  >
                     <Highlight
                       query="hotel sede de la boda"
                       styles={{
@@ -76,16 +81,16 @@ export function Recommendations() {
                     </Button>
                   </Flex>
                   <Box px={6} pt={4}>
-                    <Link color="teal.500" isExternal>
-                      <a
-                        href="/files/GAMMA-CASTELLANO-BLOQUEO.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Text fontWeight="bold" fontSize="lg">
-                          Conoce las tarifas preferentes aquí
-                        </Text>
-                      </a>
+                    <Link
+                      color="teal.500"
+                      isExternal
+                      href="/files/GAMMA-CASTELLANO-BLOQUEO.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Text fontWeight="bold" fontSize="lg">
+                        Conoce las tarifas preferentes aquí
+                      </Text>
                     </Link>
                   </Box>
                 </Flex>
@@ -96,11 +101,14 @@ export function Recommendations() {
               imageAlt="Imange de Vans para transporte"
               title={"Transporte en Vans"}
               content={
-                <>
-                  <Text fontSize="lg" color={"gray.600"} textAlign="justify">
-                    Las vans saldrán y regresarán al hotel sede de la boda.
-                  </Text>
-                </>
+                <Text
+                  fontSize="lg"
+                  color={"gray.600"}
+                  textAlign="justify"
+                  maxWidth="sm"
+                >
+                  Las vans saldrán y regresarán al hotel sede de la boda.
+                </Text>
               }
               bottom={
                 <Flex flexDirection="column">
