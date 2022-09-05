@@ -1,13 +1,11 @@
+import { useGlobalContext } from "@/utils/GlobalContext";
 import {
-  Box,
   Flex,
   Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalFocusScope,
   ModalFooter,
-  ModalHeader,
   ModalOverlay,
   Select,
   Text,
@@ -15,21 +13,31 @@ import {
   Button,
   Input,
   useClipboard,
+  InputGroup,
+  InputLeftAddon,
+  InputRightElement,
+  IconButton,
 } from "@chakra-ui/react";
-import { ChangeEvent, useState } from "react";
+import { CopyIcon } from "@chakra-ui/icons";
+import { ChangeEvent, useState, MouseEvent } from "react";
+import { MercadoPagoButton } from "../mercadoPago";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import { pages } from "@/utils/pages";
 
 type PaymentModalProps = {
   isOpen: boolean;
   onClose(): void;
-  // monto: number;
 };
 
 export function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
   const [paymentType, setPaymentType] = useState("transferencia");
+  const { price } = useGlobalContext();
+  const router = useRouter();
   const data = {
     clabe: "014650606175512344",
     cuenta: "60617551234",
-    nombre: "JESUS M HERNANDEZ Z",
+    nombre: "JESUS M HERNANDEZ",
   } as const;
 
   const { hasCopied: hasCopiedClabe, onCopy: onCopyClabe } = useClipboard(
@@ -47,96 +55,113 @@ export function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
   function handleChange(e?: ChangeEvent<HTMLSelectElement>) {
     setPaymentType(e?.target.value ?? "transferencia");
   }
+
+  function handleComplete(e?: MouseEvent<HTMLButtonElement>) {
+    e?.preventDefault();
+    onClose();
+    router.push(`/${pages.contactUs}`);
+  }
+
   return (
     <Modal
       closeOnOverlayClick={false}
       isOpen={isOpen}
       onClose={onClose}
-      size={["full", "md"]}
+      size={["full", "lg"]}
+      isCentered
     >
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Pasarela de pago</ModalHeader>
         <ModalCloseButton />
-        <ModalBody pb={6}>
+        <ModalBody>
           <Flex flexDir="column">
-            <Text fontSize="md">
-              Tenemos 2 opciones seguras para realizar el pago del regalo.
+            <Text py={2} fontSize="xl">
+              Pasarela de pagos
+            </Text>
+            <Text fontSize="md" py={1}>
+              Elige la opción para el pago de tu regalo:
             </Text>
             <Select
-              py={5}
+              py={2}
               size="lg"
               value={paymentType}
               onChange={handleChange}
             >
-              <option value="transferencia">Transferencia bancaria</option>
+              <option value="transferencia">Transferencia Interbancaria</option>
               <option value="mercadoPago">Pago con Mercado Pago</option>
             </Select>
-            <Box>
-              {paymentType === "transferencia" ? (
-                <VStack alignItems="flex-start">
-                  <Text pb={2} fontSize="2xl" fontWeight="bold" color="red.500">
-                    Santander
-                  </Text>
-                  <Text fontSize="md">Clabe Interbancaria</Text>
-                  <Flex pb={1}>
-                    <Input
-                      mr={1}
-                      variant="filled"
-                      value={data.clabe}
-                      isReadOnly
+            {paymentType === "transferencia" ? (
+              <VStack alignItems="flex-start">
+                <Text py={1} fontSize="2xl" fontWeight="bold" color="red.500">
+                  Santander
+                </Text>
+                <InputGroup size="md">
+                  <InputLeftAddon>CLABE</InputLeftAddon>
+                  <Input mr="3rem" value={data.clabe} isReadOnly pr={1} />
+                  <InputRightElement>
+                    <IconButton
+                      colorScheme="cta"
+                      aria-label={hasCopiedClabe ? "Copiado" : "Copiar"}
+                      onClick={onCopyClabe}
+                      icon={<CopyIcon />}
                     />
-                    <Button onClick={onCopyClabe}>
-                      {hasCopiedClabe ? "Copiado" : "Copiar"}
-                    </Button>
-                  </Flex>
-                  <Text fontSize="md">Cuenta</Text>
-                  <Flex pb={1}>
-                    <Input
-                      mr={1}
-                      variant="filled"
-                      value={data.cuenta}
-                      isReadOnly
+                  </InputRightElement>
+                </InputGroup>
+                <InputGroup size="md">
+                  <InputLeftAddon>CUENTA</InputLeftAddon>
+                  <Input mr="3rem" value={data.cuenta} isReadOnly pr={1} />
+                  <InputRightElement>
+                    <IconButton
+                      colorScheme="cta"
+                      aria-label={hasCopiedCuenta ? "Copiado" : "Copiar"}
+                      onClick={onCopyCuenta}
+                      icon={<CopyIcon />}
                     />
-                    <Button onClick={onCopyCuenta}>
-                      {hasCopiedCuenta ? "Copiado" : "Copiar"}
-                    </Button>
-                  </Flex>
-                  <Text fontSize="md">Nombre</Text>
-                  <Flex pb={1}>
-                    <Input
-                      mr={1}
-                      variant="filled"
-                      value={"JESUS M HERNANDEZ Z"}
-                      isReadOnly
+                  </InputRightElement>
+                </InputGroup>
+                <InputGroup size="md">
+                  <InputLeftAddon>NOMBRE</InputLeftAddon>
+                  <Input mr="3rem" value={data.nombre} isReadOnly pr={1} />
+                  <InputRightElement>
+                    <IconButton
+                      colorScheme="cta"
+                      aria-label={hasCopiedNombre ? "Copiado" : "Copiar"}
+                      onClick={onCopyNombre}
+                      icon={<CopyIcon />}
                     />
-                    <Button onClick={onCopyNombre}>
-                      {hasCopiedNombre ? "Copiado" : "Copiar"}
-                    </Button>
-                  </Flex>
-                  <Text fontSize="md">Monto</Text>
-                  <Flex pb={1}>
-                    <Input mr={1} variant="filled" value={2000} isReadOnly />
-                    <Button onClick={onCopyMonto}>
-                      {hasCopiedMonto ? "Copiado" : "Copiar"}
-                    </Button>
-                  </Flex>
-                </VStack>
-              ) : (
-                <div>Mercado Pago</div>
-              )}
-            </Box>
+                  </InputRightElement>
+                </InputGroup>
+                <InputGroup size="md">
+                  <InputLeftAddon>MONTO</InputLeftAddon>
+                  <Input mr="3rem" value={price} isReadOnly pr={1} />
+                  <InputRightElement>
+                    <IconButton
+                      colorScheme="cta"
+                      aria-label={hasCopiedMonto ? "Copiado" : "Copiar"}
+                      onClick={onCopyMonto}
+                      icon={<CopyIcon />}
+                    />
+                  </InputRightElement>
+                </InputGroup>
+                <Text py={4}>
+                  * Al finalizar la transferencia, regresa a esta pantalla y da
+                  click en Pago Completado para enviarnos un mensaje.
+                </Text>
+              </VStack>
+            ) : (
+              <VStack>
+                Mercado Pago
+                <MercadoPagoButton />
+              </VStack>
+            )}
           </Flex>
         </ModalBody>
         <ModalFooter>
-          <Button
-            colorScheme="green"
-            size="lg"
-            onClick={() => {
-              window.open("https://wa.me/+5212225225414");
-            }}
-          >
-            Mandar un WhatsApp
+          <Button variant="outline" mr={3} onClick={onClose}>
+            Cancelar
+          </Button>
+          <Button colorScheme="cta" onClick={handleComplete}>
+            Pago completado
           </Button>
         </ModalFooter>
       </ModalContent>

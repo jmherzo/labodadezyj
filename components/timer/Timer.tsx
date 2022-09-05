@@ -8,7 +8,7 @@ type DigitProps = {
 };
 function Digit({ digit, label }: DigitProps) {
   return (
-    <Box className={styles.digitContainer}>
+    <Box className={styles.digitContainer} color="black">
       <Box fontSize="5xl">{digit}</Box>
       <Box fontSize="lg">{label}</Box>
     </Box>
@@ -17,7 +17,7 @@ function Digit({ digit, label }: DigitProps) {
 
 export function Timer() {
   return (
-    <Box className={styles.container}>
+    <Box className={styles.container} bg="tusk" color="black">
       <Text fontSize="2xl" className={styles.title}>
         Faltan
       </Text>

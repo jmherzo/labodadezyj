@@ -22,9 +22,6 @@ export function Recommendations() {
   const { hasCopied, onCopy } = useClipboard(hotelCode);
   return (
     <Box className={styles.container}>
-      <Box padding="1rem" bg="#f5f6f3">
-        <Divider />
-      </Box>
       <Box className={styles.titleContainer}>
         <Text fontSize="2xl" className={styles.title}>
           Recomendaciones

@@ -7,6 +7,8 @@ import { Footer } from "../components/footer";
 import { Gifts } from "../components/gifts";
 import { Intro } from "../components/intro";
 import { Recommendations } from "../components/recommendations";
+import { ContactUsSection } from "@/components/contactUs";
+import { Rsvp } from "@/components/rsvp";
 
 const Home: NextPage = () => {
   return (
@@ -19,7 +21,9 @@ const Home: NextPage = () => {
       <Intro />
       <Timer />
       <Gifts />
+      <ContactUsSection />
       <Recommendations />
+      <Rsvp />
       <Footer />
     </>
   );

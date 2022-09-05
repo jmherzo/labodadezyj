@@ -5,11 +5,13 @@ type ButtonProps = {
   children: ReactNode;
   onClick?: MouseEventHandler<HTMLButtonElement>;
   colorScheme?: string;
+  variant?: string;
 };
 export function Button({
   children,
   onClick,
   colorScheme = "cta",
+  variant,
 }: ButtonProps) {
   return (
     <ChakraButton
@@ -17,8 +19,9 @@ export function Button({
       rounded="lg"
       size="md"
       colorScheme={colorScheme}
+      variant={variant}
     >
-      <Text fontSize="lg">{children}</Text>
+      <Text fontSize="xl">{children}</Text>
     </ChakraButton>
   );
 }
