@@ -2,29 +2,28 @@ import { Box, Flex, Image, Text } from "@chakra-ui/react";
 import styles from "./cardWithImage.module.scss";
 import { Button } from "../button";
 import React from "react";
+import { Gift } from "@/lib/types";
 import { useGlobalContext } from "@/utils/GlobalContext";
 
 type CardWithImageProps = {
   src: string;
-  altSrc: string;
-  title: string;
-  price: number;
-  cta: string;
+  gift: Gift | undefined;
+  callToAction?: string;
   onClick(): void;
 };
 
 function CardWithImage({
   src,
-  altSrc,
-  title,
-  price,
-  cta,
+  gift,
+  callToAction = "Regalar",
   onClick,
 }: CardWithImageProps) {
-  const { setPrice } = useGlobalContext();
+  const { setGift } = useGlobalContext();
   function handleOnClik() {
+    if (gift) {
+      setGift(gift);
+    }
     onClick();
-    setPrice(Number(price));
   }
   return (
     <Box
@@ -39,14 +38,14 @@ function CardWithImage({
         h={{ sm: "200px", md: "300px" }}
         w={{ sm: "350px" }}
         src={src}
-        alt={altSrc}
+        alt={`Imagen de ${gift?.description}`}
         fit="cover"
         roundedTop="lg"
       />
       <Flex flexDir="column" p="1rem">
         <Box p="0.5rem">
           <Text fontSize="2xl" lineHeight="tight" className={styles.title}>
-            {title}
+            {gift?.description}
           </Text>
         </Box>
         <Flex
@@ -56,10 +55,10 @@ function CardWithImage({
           pb="1rem"
           fontWeight="bold"
         >
-          <Text fontSize="2xl" pr="0.25rem">{`$${price}`}</Text>
+          <Text fontSize="2xl" pr="0.25rem">{`$${gift?.price}`}</Text>
           <Text fontSize="md">{`MXN`}</Text>
         </Flex>
-        <Button onClick={handleOnClik}>{cta}</Button>
+        <Button onClick={handleOnClik}>{callToAction}</Button>
       </Flex>
     </Box>
   );

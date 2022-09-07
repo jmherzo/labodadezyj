@@ -21,7 +21,6 @@ import {
 import { CopyIcon } from "@chakra-ui/icons";
 import { ChangeEvent, useState, MouseEvent } from "react";
 import { MercadoPagoButton } from "../mercadoPago";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import { pages } from "@/utils/pages";
 
@@ -32,7 +31,7 @@ type PaymentModalProps = {
 
 export function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
   const [paymentType, setPaymentType] = useState("transferencia");
-  const { price } = useGlobalContext();
+  const { gift } = useGlobalContext();
   const router = useRouter();
   const data = {
     clabe: "014650606175512344",
@@ -133,7 +132,7 @@ export function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
                 </InputGroup>
                 <InputGroup size="md">
                   <InputLeftAddon>MONTO</InputLeftAddon>
-                  <Input mr="3rem" value={price} isReadOnly pr={1} />
+                  <Input mr="3rem" value={gift.price} isReadOnly pr={1} />
                   <InputRightElement>
                     <IconButton
                       colorScheme="cta"

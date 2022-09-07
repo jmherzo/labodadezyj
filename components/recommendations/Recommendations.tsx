@@ -86,7 +86,7 @@ export function Recommendations() {
                       rel="noopener noreferrer"
                     >
                       <Text fontWeight="bold" fontSize="lg">
-                        Conoce las tarifas preferentes aquí
+                        Conoce las tarifas dando click aquí
                       </Text>
                     </Link>
                   </Box>

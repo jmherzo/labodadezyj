@@ -1,20 +1,28 @@
+import { Gift } from "@/lib/types";
 import React, { ReactNode, useContext, useMemo, useState } from "react";
 
 type GlobalContext = {
-  price: number;
-  setPrice: React.Dispatch<React.SetStateAction<number>>;
+  gift: Gift;
+  setGift: React.Dispatch<React.SetStateAction<Gift>>;
+};
+
+const initialState = {
+  id: -1,
+  description: "",
+  price: 0,
+  amount: 0,
 };
 
 const GlobalContext = React.createContext<GlobalContext>({
-  price: 0,
-  setPrice: () => {},
+  gift: initialState,
+  setGift: () => {},
 });
 
 export function GlobalContextProvider({ children }: { children: ReactNode }) {
-  const [price, setPrice] = useState(0);
+  const [gift, setGift] = useState<Gift>(initialState);
   const contextValue = useMemo<GlobalContext>(
-    () => ({ price, setPrice }),
-    [price],
+    () => ({ gift, setGift }),
+    [gift],
   );
 
   return (

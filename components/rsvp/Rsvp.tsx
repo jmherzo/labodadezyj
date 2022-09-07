@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  Divider,
-  StackDivider,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Button, Divider, Text, VStack } from "@chakra-ui/react";
 import styles from "./rsvp.module.scss";
 export function Rsvp() {
   return (
@@ -13,7 +6,7 @@ export function Rsvp() {
       <Box px="2rem" bg="mainWhite">
         <Divider />
       </Box>
-      <VStack px="2rem" py="2rem" bg="mainWhite">
+      <VStack px="2rem" py="2rem" bg="mainWhite" minH="260px">
         <Box className={styles.titleContainer}>
           <Text fontSize="2xl" className={styles.title}>
             RSVP
@@ -27,7 +20,7 @@ export function Rsvp() {
           colorScheme="green"
           size="lg"
           onClick={() => {
-            window.open("https://wa.me/+529999940088");
+            window.open("https://wa.me/+529999940084");
           }}
         >
           Enviar un WhatsApp
