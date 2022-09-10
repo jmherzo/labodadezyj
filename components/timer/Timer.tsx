@@ -22,7 +22,7 @@ export function Timer() {
         Faltan
       </Text>
       <Countdown
-        date={"2022-11-05T14:00:00"}
+        date={"2022-11-05T13:00:00"}
         renderer={({ days, hours, minutes, seconds, completed }: any) => {
           if (completed) {
             return "It's today!";

@@ -12,6 +12,14 @@ const nextConfig = {
       },
     ];
   },
+  webpack: (config, { webpack, isServer }) => {
+    config.plugins.push(
+      new webpack.DefinePlugin({
+        __IS_SERVER__: isServer,
+      }),
+    );
+    return config;
+  },
 };
 
 module.exports = nextConfig;

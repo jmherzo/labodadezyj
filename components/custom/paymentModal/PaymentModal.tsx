@@ -143,8 +143,9 @@ export function PaymentModal({ isOpen, onClose }: PaymentModalProps) {
                   </InputRightElement>
                 </InputGroup>
                 <Text py={4}>
-                  * Al finalizar la transferencia, regresa a esta pantalla y da
-                  click en Pago Completado para enviarnos un mensaje.
+                  * Al finalizar la transferencia en tu banca electrónica,
+                  regresa a esta pantalla y da click en Pago Completado para
+                  enviarnos un mensaje.
                 </Text>
               </VStack>
             ) : (

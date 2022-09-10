@@ -22,6 +22,7 @@ function Gifts() {
     }
   }, [router.asPath]);
 
+  /** Refactor Gifts map to be an array with objects + img path */
   return (
     <section ref={sectionRef} id="mesa-de-regalos">
       <PaymentModal isOpen={isOpen} onClose={onClose} />
