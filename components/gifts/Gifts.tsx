@@ -1,19 +1,20 @@
-import { Box, Flex, Text, useDisclosure } from "@chakra-ui/react";
+import { Box, Text, useDisclosure, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { EventHandler, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { CardWithImage } from "../custom/cardWithImage";
 import styles from "./gifts.module.scss";
 import { Button } from "../custom/button";
 import { PaymentModal } from "../custom/paymentModal";
+import { giftsList } from "@/lib/giftsList";
+import { initialGift, useGlobalContext } from "@/utils/GlobalContext";
 
 function Gifts() {
   const sectionRef = useRef<HTMLElement>(null);
   const router = useRouter();
+  const { setGift } = useGlobalContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [monto, setMonto] = useState(2000);
   useEffect(() => {
     if (router.asPath === "/regalos") {
-      console.log("asPath", router.asPath);
       if (sectionRef.current) {
         sectionRef.current?.scrollIntoView({
           behavior: "smooth",
@@ -22,11 +23,10 @@ function Gifts() {
     }
   }, [router.asPath]);
 
-  //  Add correct types
-  function handleClick(e: any) {
+  const handleNoAmount = useCallback(() => {
+    setGift(initialGift);
     onOpen();
-    // setMonto(e.target.value);
-  }
+  }, [setGift, onOpen]);
 
   return (
     <section ref={sectionRef} id="mesa-de-regalos">
@@ -37,76 +37,47 @@ function Gifts() {
             Mesa de Regalos
           </Text>
         </Box>
-        <Box maxWidth={["md", "lg"]} textAlign="justify" mb="1rem">
+        <VStack
+          maxWidth={["md", "lg"]}
+          textAlign="justify"
+          mb="1rem"
+          justifyContent="center"
+        >
           <Text fontSize="lg">
             Nuestro hogar está casi completo, es por eso que no tenemos una mesa
             de regalos en una tienda. En esta sección podrás regalarnos
             experiencias para disfrutar en nuestra luna de miel.
           </Text>
           <br />
-          <Text fontSize="xl" textAlign="center" fontWeight="medium">
+          <Text fontSize="xl" fontWeight="medium">
             Nuestra luna de miel:
-            <br />
-            <Text fontSize="lg">Maldivas 🏖️ Abu Dhabi 🏜️ Dubai</Text>
           </Text>
-        </Box>
+          <Text fontSize="lg">Maldivas 🏖️ Abu Dhabi 🏜️ Dubai</Text>
+        </VStack>
         <Box className={styles.cardContainer}>
-          <CardWithImage
-            src="/spa-maldivas.png"
-            altSrc="Imagen de Spa en la playa"
-            title="Spa a la orilla de la playa"
-            price={2000}
-            cta="Regalar"
-            onClick={handleClick}
-          />
-          <CardWithImage
-            src="/safari-desierto.png"
-            altSrc="Imagen de Tour en el desierto"
-            title="Safari en el desierto"
-            price={1250}
-            cta="Regalar"
-            onClick={onOpen}
-          />
-          <CardWithImage
-            src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-            altSrc="Imagen de Buceo en el océano"
-            title="Buceo en las Maldivas"
-            price={1500}
-            cta="Regalar"
-            onClick={onOpen}
-          />
-          <CardWithImage
-            src="/paseo-catamaran.jpeg"
-            altSrc="Imagen de Paseo en catamaran"
-            title="Paseo en catamaran"
-            price={1800}
-            cta="Regalar"
-            onClick={onOpen}
-          />
-          <CardWithImage
-            src="/romantic-dinner.png"
-            altSrc="Imagen de cena en el desierto"
-            title="Cena en el desierto"
-            price={2500}
-            cta="Regalar"
-            onClick={onOpen}
-          />
-          <CardWithImage
-            src="/sheraton-jet-ski-min.webp"
-            altSrc="Imagen de picnic en una isla"
-            title="Picnic en una isla"
-            price={2800}
-            cta="Regalar"
-            onClick={onOpen}
-          />
+          {giftsList.map((gift) => (
+            <CardWithImage key={gift.id} gift={gift} onClick={onOpen} />
+          ))}
         </Box>
-        <Flex py={5} maxW="sm" flexDir="column">
-          <Text fontSize="xl" py="4">
-            Si te gustaría regalarnos una cantidad diferente, puedes hacerlo
-            aquí:
+        <VStack
+          maxW="md"
+          flexDir="column"
+          pt="2rem"
+          pb="1rem"
+          align="stretch"
+          spacing={4}
+        >
+          <Text fontSize="2xl" lineHeight="tight">
+            Regálanos una cantidad diferente:
           </Text>
-          <Button colorScheme="blue">Regalar</Button>
-        </Flex>
+          <Button
+            onClick={handleNoAmount}
+            colorScheme="cta"
+            variant={["solid", "outline"]}
+          >
+            Regalar
+          </Button>
+        </VStack>
       </Box>
     </section>
   );

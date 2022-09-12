@@ -8,11 +8,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.9",
     "@chakra-ui/react": "^2.2.9",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "add-to-calendar-button": "^1.8.6",
+    "axios": "^0.27.2",
+    "formik": "^2.2.9",
     "framer-motion": "^7.2.1",
+    "mercadopago": "^1.5.14",
     "next": "^12.2.5",
     "react": "^18.2.0",
     "react-countdown": "^2.3.2",
@@ -21,6 +25,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
+    "@types/mercadopago": "^1.5.6",
     "@types/node": "17.0.16",
     "@types/react": "17.0.39",
     "eslint": "8.8.0",

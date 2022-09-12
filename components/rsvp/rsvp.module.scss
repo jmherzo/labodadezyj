@@ -1,0 +1,15 @@
+.container {
+  background-color: #f5f6f3;
+  color: #064420;
+
+  .titleContainer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 1rem 0;
+
+    .title {
+      font-weight: 800;
+      padding: 0.5rem;
+    }
+  }
+}

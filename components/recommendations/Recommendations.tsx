@@ -22,9 +22,6 @@ export function Recommendations() {
   const { hasCopied, onCopy } = useClipboard(hotelCode);
   return (
     <Box className={styles.container}>
-      <Box padding="1rem" bg="#f5f6f3">
-        <Divider />
-      </Box>
       <Box className={styles.titleContainer}>
         <Text fontSize="2xl" className={styles.title}>
           Recomendaciones
@@ -89,7 +86,7 @@ export function Recommendations() {
                       rel="noopener noreferrer"
                     >
                       <Text fontWeight="bold" fontSize="lg">
-                        Conoce las tarifas preferentes aquí
+                        Conoce las tarifas dando click aquí
                       </Text>
                     </Link>
                   </Box>
@@ -97,8 +94,8 @@ export function Recommendations() {
               }
             />
             <Recommendation
-              imageSrc={"/vans.png"}
-              imageAlt="Imange de Vans para transporte"
+              imageSrc={"/vans-min.png"}
+              imageAlt="Imagen de Vans para transporte"
               title={"Transporte en Vans"}
               content={
                 <Text

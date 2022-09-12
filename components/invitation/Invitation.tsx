@@ -109,7 +109,7 @@ export function Invitation() {
           subtitle="Recepción"
           title=" Hacienda Yaxcopoil"
           bottom={
-            <Stack spacing="3" padding="3">
+            <Stack spacing="3" padding="3" textAlign="center">
               <Link
                 color="green.600"
                 href="https://goo.gl/maps/MLarKrS2r8sRNzzp7"

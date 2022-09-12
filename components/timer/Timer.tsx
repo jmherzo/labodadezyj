@@ -8,7 +8,7 @@ type DigitProps = {
 };
 function Digit({ digit, label }: DigitProps) {
   return (
-    <Box className={styles.digitContainer}>
+    <Box className={styles.digitContainer} color="black">
       <Box fontSize="5xl">{digit}</Box>
       <Box fontSize="lg">{label}</Box>
     </Box>
@@ -17,12 +17,12 @@ function Digit({ digit, label }: DigitProps) {
 
 export function Timer() {
   return (
-    <Box className={styles.container}>
+    <Box className={styles.container} bg="tusk" color="black">
       <Text fontSize="2xl" className={styles.title}>
         Faltan
       </Text>
       <Countdown
-        date={"2022-11-05T14:00:00"}
+        date={"2022-11-05T13:00:00"}
         renderer={({ days, hours, minutes, seconds, completed }: any) => {
           if (completed) {
             return "It's today!";
