@@ -6,20 +6,21 @@ type GlobalContext = {
   setGift: React.Dispatch<React.SetStateAction<Gift>>;
 };
 
-const initialState = {
-  id: -1,
+export const initialGift: Gift = {
+  id: 0,
   description: "",
   price: 0,
   amount: 0,
+  imageSrc: "",
 };
 
 const GlobalContext = React.createContext<GlobalContext>({
-  gift: initialState,
+  gift: initialGift,
   setGift: () => {},
 });
 
 export function GlobalContextProvider({ children }: { children: ReactNode }) {
-  const [gift, setGift] = useState<Gift>(initialState);
+  const [gift, setGift] = useState<Gift>(initialGift);
   const contextValue = useMemo<GlobalContext>(
     () => ({ gift, setGift }),
     [gift],

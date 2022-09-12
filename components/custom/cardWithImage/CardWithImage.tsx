@@ -6,14 +6,12 @@ import { Gift } from "@/lib/types";
 import { useGlobalContext } from "@/utils/GlobalContext";
 
 type CardWithImageProps = {
-  src: string;
   gift: Gift | undefined;
   callToAction?: string;
   onClick(): void;
 };
 
 function CardWithImage({
-  src,
   gift,
   callToAction = "Regalar",
   onClick,
@@ -37,7 +35,7 @@ function CardWithImage({
       <Image
         h={{ sm: "200px", md: "300px" }}
         w={{ sm: "350px" }}
-        src={src}
+        src={gift?.imageSrc}
         alt={`Imagen de ${gift?.description}`}
         fit="cover"
         roundedTop="lg"
@@ -58,7 +56,9 @@ function CardWithImage({
           <Text fontSize="2xl" pr="0.25rem">{`$${gift?.price}`}</Text>
           <Text fontSize="md">{`MXN`}</Text>
         </Flex>
-        <Button onClick={handleOnClik}>{callToAction}</Button>
+        <Button onClick={handleOnClik} colorScheme="cta">
+          {callToAction}
+        </Button>
       </Flex>
     </Box>
   );

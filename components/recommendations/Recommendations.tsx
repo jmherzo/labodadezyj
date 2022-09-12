@@ -94,8 +94,8 @@ export function Recommendations() {
               }
             />
             <Recommendation
-              imageSrc={"/vans.png"}
-              imageAlt="Imange de Vans para transporte"
+              imageSrc={"/vans-min.png"}
+              imageAlt="Imagen de Vans para transporte"
               title={"Transporte en Vans"}
               content={
                 <Text

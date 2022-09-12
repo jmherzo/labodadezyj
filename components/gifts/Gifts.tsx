@@ -1,19 +1,20 @@
 import { Box, Text, useDisclosure, VStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { CardWithImage } from "../custom/cardWithImage";
 import styles from "./gifts.module.scss";
 import { Button } from "../custom/button";
 import { PaymentModal } from "../custom/paymentModal";
 import { giftsList } from "@/lib/giftsList";
+import { initialGift, useGlobalContext } from "@/utils/GlobalContext";
 
 function Gifts() {
   const sectionRef = useRef<HTMLElement>(null);
   const router = useRouter();
+  const { setGift } = useGlobalContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
   useEffect(() => {
     if (router.asPath === "/regalos") {
-      console.log("asPath", router.asPath);
       if (sectionRef.current) {
         sectionRef.current?.scrollIntoView({
           behavior: "smooth",
@@ -22,7 +23,11 @@ function Gifts() {
     }
   }, [router.asPath]);
 
-  /** Refactor Gifts map to be an array with objects + img path */
+  const handleNoAmount = useCallback(() => {
+    setGift(initialGift);
+    onOpen();
+  }, [setGift, onOpen]);
+
   return (
     <section ref={sectionRef} id="mesa-de-regalos">
       <PaymentModal isOpen={isOpen} onClose={onClose} />
@@ -50,36 +55,9 @@ function Gifts() {
           <Text fontSize="lg">Maldivas 🏖️ Abu Dhabi 🏜️ Dubai</Text>
         </VStack>
         <Box className={styles.cardContainer}>
-          <CardWithImage
-            src="/spa-maldivas-min.webp"
-            gift={giftsList.get("spa")}
-            onClick={onOpen}
-          />
-          <CardWithImage
-            src="/safari-desierto.png"
-            gift={giftsList.get("safari")}
-            onClick={onOpen}
-          />
-          <CardWithImage
-            src={`/buceo-min.webp`}
-            gift={giftsList.get("buceo")}
-            onClick={onOpen}
-          />
-          <CardWithImage
-            src="/paseo-catamaran.jpeg"
-            gift={giftsList.get("catamaran")}
-            onClick={onOpen}
-          />
-          <CardWithImage
-            src="/romantic-dinner.png"
-            gift={giftsList.get("cena")}
-            onClick={onOpen}
-          />
-          <CardWithImage
-            src="/sheraton-jet-ski-min.webp"
-            gift={giftsList.get("picnic")}
-            onClick={onOpen}
-          />
+          {giftsList.map((gift) => (
+            <CardWithImage key={gift.id} gift={gift} onClick={onOpen} />
+          ))}
         </Box>
         <VStack
           maxW="md"
@@ -92,7 +70,13 @@ function Gifts() {
           <Text fontSize="2xl" lineHeight="tight">
             Regálanos una cantidad diferente:
           </Text>
-          <Button colorScheme="cta">Regalar</Button>
+          <Button
+            onClick={handleNoAmount}
+            colorScheme="cta"
+            variant={["solid", "outline"]}
+          >
+            Regalar
+          </Button>
         </VStack>
       </Box>
     </section>
