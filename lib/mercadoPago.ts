@@ -8,7 +8,7 @@ import {
 function configureMercadoPago() {
   try {
     configure({
-      access_token: process.env.MERCADOPAGO_ACCESS_TOKEN ?? "",
+      access_token: process.env.NEXT_PUBLIC_MERCADOPAGO_ACCESS_TOKEN ?? "",
     });
   } catch (e) {
     console.error(e);
