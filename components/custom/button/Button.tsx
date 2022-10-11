@@ -8,7 +8,7 @@ type JMButtonProps = {
 export function Button({ children, ...rest }: JMButtonProps | ButtonProps) {
   return (
     <ChakraButton rounded="lg" size="md" {...rest}>
-      <Text fontSize="xl">{children}</Text>
+      <Text fontSize={["xl", "md"]}>{children}</Text>
     </ChakraButton>
   );
 }

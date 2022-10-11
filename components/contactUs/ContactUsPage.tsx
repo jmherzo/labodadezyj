@@ -57,7 +57,7 @@ export function ContactUsPage() {
   }
   return (
     <>
-      <VStack py={[5, 10]} px={8}>
+      <VStack py={[5, 10]} px={8} h="100vh">
         <VStack spacing={{ base: 4, md: 6 }} align="stretch">
           <NextLink href="/" passHref>
             <Link display="flex" alignItems="center" alignSelf="flex-start">
@@ -92,7 +92,10 @@ export function ContactUsPage() {
           >
             {({ isSubmitting }) => (
               <Form>
-                <VStack spacing={{ base: 4, md: 5 }} align="stretch">
+                <VStack
+                  spacing={{ base: 4, md: 5 }}
+                  align={{ base: "stretch", md: "flex-end" }}
+                >
                   <Field name="name">
                     {({ field }: FieldProps) => (
                       <FormControl isRequired>

@@ -1,4 +1,5 @@
 import { Box, Button, Divider, Text, VStack } from "@chakra-ui/react";
+import { Emoji } from "../emoji";
 import styles from "./rsvp.module.scss";
 export function Rsvp() {
   return (
@@ -13,8 +14,8 @@ export function Rsvp() {
           </Text>
         </Box>
         <Text fontSize="lg" py={4} alignSelf="center">
-          Confirma tu asistencia, enviando un whatsapp a nuestro wedding
-          planner.
+          Confirma tu asistencia enviando un whatsapp a nuestro wedding planner
+          <Emoji symbol="🙋" label="icono de wedding planner" />
         </Text>
         <Button
           colorScheme="green"
