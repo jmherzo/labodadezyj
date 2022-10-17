@@ -11,7 +11,7 @@ export const giftsList: Gift[] = [
   {
     id: 2,
     description: "Safari en el desierto",
-    price: 2800,
+    price: 5000,
     amount: 1,
     imageSrc: "/safari-desierto-min.webp",
   },
