@@ -1,14 +1,13 @@
 import { Button as ChakraButton, ButtonProps, Text } from "@chakra-ui/react";
 import { MouseEventHandler, ReactNode } from "react";
 
-type JMButtonProps = {
+interface JMButtonProps extends ButtonProps {
   children: ReactNode;
-  onClick(): void;
-};
-export function Button({ children, ...rest }: JMButtonProps | ButtonProps) {
+}
+export function Button({ children, ...rest }: JMButtonProps) {
   return (
     <ChakraButton rounded="lg" size="md" {...rest}>
-      <Text fontSize="xl">{children}</Text>
+      <Text fontSize={["xl", "md"]}>{children}</Text>
     </ChakraButton>
   );
 }

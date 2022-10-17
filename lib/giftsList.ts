@@ -11,7 +11,7 @@ export const giftsList: Gift[] = [
   {
     id: 2,
     description: "Safari en el desierto",
-    price: 2800,
+    price: 5000,
     amount: 1,
     imageSrc: "/safari-desierto-min.webp",
   },
@@ -43,4 +43,25 @@ export const giftsList: Gift[] = [
     amount: 1,
     imageSrc: "/sheraton-jet-ski-min.webp",
   },
+  // {
+  //   id: 7,
+  //   description: "Cena debajo del mar",
+  //   price: 6000,
+  //   amount: 1,
+  //   imageSrc: "/comida-debajo-mar-min.webp",
+  // },
+  // {
+  //   id: 8,
+  //   description: "Flyboard",
+  //   price: 5000,
+  //   amount: 1,
+  //   imageSrc: "/flyboard-min.webp",
+  // },
+  // {
+  //   id: 9,
+  //   description: "Paravelismo en Maldivas",
+  //   price: 4500,
+  //   amount: 1,
+  //   imageSrc: "/paravelismo-isla-min.webp",
+  // },
 ];
